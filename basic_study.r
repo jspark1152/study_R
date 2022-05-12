@@ -180,3 +180,80 @@ merge(x, y, all.x=TRUE) #all.x를 활성화함으로서 x의 모든 행값을 �
 merge(x, y, all.y=TRUE) #all.y를 활성화함으로서 y의 모든 행값을 포함
 merge(x, y, all=TRUE) #all을 활성화함으로서 x, y의 모든 행값을 포함
 merge(x, y, by='name') #공통된 기준 컬럼이 name 뿐
+
+#R의 특징은 구문 구분에 있어서 중괄호 사용
+#if문 구조는 파이썬과 비슷
+score <- 95
+if(score>=90){
+    print('수')
+}else if(score>=80){
+    print('우')
+}else{
+    print('가')
+}
+
+#ifelse문은 간단한 if문
+#ifelse(조건문, 조건문이 참인 경우 출력, 조건문이 거짓인 경우 출력)
+score <- 100
+ifelse(score>=90, 'Pass', 'Fail')
+
+#switch문은 조건에 따라 여러 경로 중 하나를 선택
+#switch(변수, case1=command1, case2=command2,..., command31==해당되는 유형이 없는 경우 명령어만 입력)
+course <- 'c'
+switch(course, 'a'='brunch', 'b'='lunch', 'dinner')
+
+#for문 또한 파이썬과 비슷
+#for(변수 in 범위){command}
+for(i in 1:4){
+    print(i)
+}
+
+#while문 또한 파이썬과 비슷
+#while(조건문){command} 조건문이 참인 경우 반복
+i <- 1
+while(i<=4){
+    print(i)
+    i <- i+1
+}
+
+#repeat문은 별도의 탈출 조건이 없을 경우 무한 반복
+#repeat{command}
+i <- 1
+repeat{
+    print(i)
+    if(i>=3){
+        break #break문은 반복문 중간에 탈출
+    }
+    i <- i+1
+}
+
+#루프 제어
+#break : 루프 탈출
+#next : 다음 반복으로 그냥 넘어감, 파이썬에서는 pass
+for(i in 1:5){
+    if(i==2){
+        next
+    }
+    print(i)
+    i <- i+1
+}
+
+#사용자 정의 함수
+#함수명 = function(var1, var2,...){코드 작성~ return(value)}
+#return 값이 없는 경우 코드 내에 마지막 출력 값에 해당되는 값이 return
+plus = function(a, b){
+    return(a+b)
+}
+plus(1,2)
+
+abs_val = function(a){
+    if(a>=0){
+        return(a)
+    }
+    else{
+        return(-a)
+    }
+}
+abs_val(10)
+abs_val(-10)
+

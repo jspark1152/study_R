@@ -120,7 +120,7 @@ list(x=list(a = c(1,2,3)), y=list(b = c(1,2,3,4)))
 matrix(c(1:12), nrow=4)
 matrix(c(1:12), nrow=4, byrow=TRUE)
 matrix(c(1:12), ncol=4)
-matrix(c(1:9), nrow=3, dimnames=list(c('t1', 't2', 't3'), c('c1', 'c2', 'c3')))
+matrix(c(1:9), nrow=3, dimnames=list(c('r1', 'r2', 'r3'), c('c1', 'c2', 'c3')))
 
 a <- matrix(c(1:4), nrow=2)
 b <- matrix(c(1:4), nrow=2)

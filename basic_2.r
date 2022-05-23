@@ -82,7 +82,7 @@ read_excel(path, sheet, range, col_name)
 이는 엑셀 파일로부터 데이터를 읽을 때 사용하는 함수
 path : 읽어 들일 파일명
 sheet : 읽어 들일 시트명
-range : 읽어 들일 시트의 범위
+range : 읽어 들일 시트의 범위 ex) "A1:B4"
 col_name : TRUE=첫 번째 행을 열 이름으로 인식 / FALSE=데이터로 인식
 '
 

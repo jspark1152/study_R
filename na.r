@@ -108,3 +108,25 @@ ds_NA2
 
 table(is.na(ds_NA2$Ozone))
 #Ozone 열의 5값 모두 결측값이 아니므로 FALSE 5 출력
+
+#Pima3 에서 결측값 처리를 해보려고 함
+summary(Pima3)
+
+#먼저 결측값을 제외한 pressure 열 값들의 평균
+mean_press <- mean(Pima3$pressure, na.rm=TRUE)
+mean_press
+
+#결측값 제거하기 전의 표준편차 확인
+std_before <- sd(Pima3$pressure, na.rm=TRUE)
+std_before
+
+#Pima3의 pressure 열에서 결측값을 제거
+Pima3$pressure <- ifelse(is.na(Pima3$pressure), mean_press, Pima3$pressure)
+
+#결측값 제거 후의 표준편차 확인
+std_after <- sd(Pima3$pressure)
+std_after
+
+#표준편차 값의 변화 확인 >> 대략 0.2 정도 감소
+std_diff <- std_after - std_before
+std_diff

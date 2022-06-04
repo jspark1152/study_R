@@ -111,3 +111,16 @@ class(data)
 a <- 1:10
 normalize <- function(a){return((a-min(a))/(max(a)-min(a)))}
 normalize(a)
+
+comment = '
+표준화 : 정규분포를 따른다고 가정하고 평균 0, 표준편차 1 을 갖도록 변환
+
+scale 함수를 통해 표준화 가능
+'
+
+data <- c(1, 3, 5, 7, 9)
+#scale 함수의 기본 설정이 표준화
+data_zscore <- scale(data)
+mean(data_zscore)
+sd(data_zscore)
+data_zscore

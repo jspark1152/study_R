@@ -115,3 +115,18 @@ min_rank(x)
 dense_rank(x)
 x : 순위(rank)를 지정할 벡터값
 '
+
+x <- c(1, 1, 5, 5, 9, 7)
+x
+#x 성분의 순위 중복 없이 순위 표시
+row_number(x)
+#x 성분의 순위 중복을 허용하여 순위 표시
+min_rank(x)
+#x 성분의 순위 중복을 허용하되 건너뜀 없이 순위 표시
+dense_rank(x)
+
+cars %>% arrange(dist) %>% mutate(rank=row_number(dist))
+
+cars %>% arrange(dist) %>% mutate(rank=min_rank(dist))
+
+cars %>% arrange(dist) %>% mutate(rank=dense_rank(dist))

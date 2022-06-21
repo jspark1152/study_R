@@ -28,7 +28,7 @@ caret::confusionMatrix(pred_svm, reference = scaled_valid_ds$Reached.on.Time_Y.N
 
 set.seed(13579)
 md_rf <- randomForest(Reached.on.Time_Y.N ~., data=scaled_train_ds, ntree=300, probability=TRUE)
-pred_rf <- predict(md_rf, newdata=scaled_valid_ds)
+pred_rf <- predict(md_rf, newdata=scaled_valid_ds, probability =TRUE)
 
 caret::confusionMatrix(pred_rf, reference=scaled_valid_ds$Reached.on.Time_Y.N)
 #결과 svm 모델이 정확도가 조금더 나음

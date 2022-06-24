@@ -15,7 +15,8 @@ idx_1 <- sample(1:nrow(ds), size=(nrow(ds)*0.75))
 train_ds <- ds[idx_1,]
 test_ds <- ds[-idx_1, -21]
 
-idx_2 <- sample(1:nrow(train_ds), size=(nrow(train_ds)*0.75))
+#idx_2 <- sample(1:nrow(train_ds), size=(nrow(train_ds)*0.75))
+idx_2 <- createDataPartition(train_ds$Churn, p = 0.75, list = FALSE)
 train_X <- train_ds[idx_2, ]
 valid_X <- train_ds[-idx_2, ]
 summary(train_X)

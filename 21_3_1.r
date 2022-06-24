@@ -29,6 +29,7 @@ print(names(sort_na)[1])
 
 #3번
 ds_3 <- read.csv('TB_notifications.csv')
+View(ds_3)
 ds_3 <- ds_3[, c('country', 'year', 'new_sp')]
 ds_3 <- ds_3 %>% filter(ds_3$year == 2000)
 ds_3 <- na.omit(ds_3)

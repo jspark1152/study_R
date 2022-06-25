@@ -45,3 +45,6 @@ pred_prob <- attr(pred_fit, 'probabilities')
 result <- cbind(pred_id, pred_prob)
 colnames(result) <- c('id', 'No', 'Yes')
 write.csv(result, 'test2_1.csv', row.names = FALSE)
+
+checkcsv <- read.csv('test2_1.csv')
+head(checkcsv)

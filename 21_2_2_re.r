@@ -40,3 +40,6 @@ colnames(result) <- c('ID', 'probability')
 head(result)
 
 write.csv(result, '수험번호_1.csv', row.names=FALSE)
+
+a <- read.csv('수험번호_1.csv')
+print(a)

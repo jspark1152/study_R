@@ -64,7 +64,7 @@ x축 = 레버리지, y축 = 쿡의 거리
 '
 #Hitters 데이터셋은 ISLR 패키지에 있음
 #View(Hitters)
-
+library(ISLR)
 #단순 선형 회귀 예제
 #PutOuts에 따른 Salary 분석
 summary(lm(Salary~PutOuts, data = Hitters))
